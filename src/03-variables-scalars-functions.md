@@ -63,7 +63,7 @@ It is often useful to pass around data with names,
 rather than passing around the values themselves.
 
 ```python
-2 + 2 # this value isn't stored anyhere
+2 + 2 # this value isn't stored anywhere
 ```
 
 But we can assign it to a variable (in this case, `x`):
@@ -87,4 +87,4 @@ And perform operations with it:
 x * 4
 ```
 
-### 
+###
