@@ -46,19 +46,45 @@ for language in ['python 2', 'python 3', 'julia', 'java', 'ruby', 'perl']:
     print('How do I print something to the screen in {}?'.format(language))
 ```
 
-###
+### Exercise
+
+**Find the syntax for adding two numbers together in some programming language**
+(not python)
+
+Some ideas:
+- Go
+- C++
+- javascript
+- FORTRAN
 
 ## Variables store information
 
+It is often useful to pass around data with names,
+rather than passing around the values themselves.
+
 ```python
-2 + 2
+2 + 2 # this value isn't stored anyhere
 ```
+
+But we can assign it to a variable (in this case, `x`):
+
 ```python
-x = 42
+x = 2 + 2
 ```
+
+Now we can access the value in the variable:
+
 ```python
 x
 ```
 ```python
-x + 2
+print("The value of x is", x)
 ```
+
+And perform operations with it:
+
+```python
+x * 4
+```
+
+### 
