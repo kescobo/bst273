@@ -30,10 +30,10 @@ At the end of this class period, you should be able to:
 
 For example to ask the computer to display some text on the screen...
 
-In python 2: `print "Hello, World!"`
-In python 3: `print("Hello, World!")`
-In julia: `println("Hello, World!")`
-In java: `System.out.println("Hello, World!")`
+- In python 2: `print "Hello, World!"`
+- In python 3: `print("Hello, World!")`
+- In julia: `println("Hello, World!")`
+- In java: `System.out.println("Hello, World!")`
 
 ### We will be using python3 syntax
 
@@ -66,7 +66,7 @@ rather than passing around the values themselves.
 2 + 2 # this value isn't stored anywhere
 ```
 
-But we can assign it to a variable (in this case, `x`):
+But we can "assign" it to a variable (in this case, `x`) with `=`:
 
 ```python
 x = 2 + 2
@@ -87,4 +87,41 @@ And perform operations with it:
 x * 4
 ```
 
-###
+### Variables behave exactly like their values
+
+In other words,
+
+```python
+print("The value of x is", 4)
+```
+
+is identical to
+
+```python
+x = 4
+print("The value of x is", x)
+```
+
+### Variables can be reassigned
+
+```py
+counter = 1
+counter
+```
+
+```py
+counter = counter + 1
+counter
+```
+
+```py
+counter = 1
+for i in range(10):
+    counter = counter + 1
+```
+
+**What is the value of counter?**
+
+1. `1`
+2. `10`
+3. `11`
