@@ -42,8 +42,8 @@ are applicable to other languages too.
 Just append `in {LANGUAGE}` to your google search to learn the syntax. Eg:
 
 ```python
-for language in ['python 2', 'python 3', 'julia', 'java', 'ruby', 'perl']:
-    print('How do I print something to the screen in {}?'.format(language))
+for language in ["python 2", "python 3", "julia", "java", "ruby", "perl"]:
+    print("How do I print something to the screen in {}?".format(language))
 ```
 
 ### Exercise
@@ -120,8 +120,136 @@ for i in range(10):
     counter = counter + 1
 ```
 
-**What is the value of counter?**
+**What is the value of `counter`?**
 
 1. `1`
-2. `10`
-3. `11`
+2. `2`
+3. `10`
+4. `11`
+
+```python
+counter
+```
+
+## "Functions" perform actions on data
+
+You've already seen a couple of functions in action eg:
+
+```py
+print("Hello, World!")
+
+for i in range(10):
+    counter = counter + 1
+```
+
+### Functions may also "return" results
+
+```python
+y = sum([1,2,3,4])
+z = print("Hi, I'm Z!")
+```
+
+```python
+print(y)
+print(z)
+```
+
+### Functions take 0 or more "arguments"
+
+```python
+s1 = "Hello,"
+s2 = "World!"
+
+print(s1)
+print(s2)
+print()
+print(s1, s2) # arguments are separated by commas
+```
+
+### When writing functions, arguments (`args`) are like variables
+
+```python
+def weird_addition(number1, number2):
+    result = 2 * (number1 + number2)
+    return result
+
+weird_addition(3, 10)
+```
+
+### Complete the function
+
+Complete the following function
+to divide the first argment by the square of the second argument
+and return the result.
+
+When this code block is evaluated, it should print "42.0".
+
+
+```python
+def square_divide(): # What should the arguments for this function be?
+    sd = n1 / n2 ** 2 # In python, `**` is the syntax for exponents
+    # don't forget to return the result
+
+
+result = square_divide(168, 2)
+
+print(result)
+```
+
+## `Type`s of information (scalars)
+
+- Different sorts of information are stored differently by computers
+- Most programming languages have built-in data types
+    - Most also have the ability to create your own
+- Common simple data types are:
+    - Strings: sequences of characters surrounded by quotes: `"Hello, World!"`
+    - Integers: positive or negative whole numbers: `42`
+    - Floats: numbers with decimals: `3.142`
+    - Booleans: binary values, `True` or `False`
+- The actions of functions depend on their arguments
+
+```py
+"Hello, " + "World!"
+```
+
+```py
+20 + 22
+```
+
+```py
+20 + 22.0
+```
+
+```py
+20 + "22.0"
+```
+
+### "Scalars" are single values
+
+- Ints, Floats, and Bools are examples of scalars
+- There are also containers for holding multiple objects (Thursday)
+- Strings are weird
+    - Can be thought of as scalars
+    - Can be thought of as array of characters
+
+### A final note on python functions
+
+- Many python types have internal "methods"
+- Methods are another name for functions that act on a type
+- In python, internal methods are called with dot syntax
+
+```python
+my_string = "I am a happy string, all held together"
+my_string.split()
+```
+
+Internal methods may also take arguments
+
+```python
+my_other_string = "Please, dont pull me apart, I cant take it"
+my_other_string.split(",")
+```
+
+## Hands on
+
+Download {{Assignment}} and go through the hand-on exercises
