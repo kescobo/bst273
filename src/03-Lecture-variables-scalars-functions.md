@@ -13,6 +13,7 @@ Kevin Bonham, PhD
 ## Learning Ojectives
 
 At the end of this class period, you should be able to:
+
 1. Identify and explain the difference between common scalar types
 2. Create and modify variables in python
 3. Perform basic arithmetic calculations in code
@@ -28,7 +29,7 @@ At the end of this class period, you should be able to:
 
 ### The type of translation between intent and machine code is the "syntax"
 
-For example to ask the computer to display some text on the screen...
+For example, to ask the computer to display some text on the screen...
 
 - In python 2: `print "Hello, World!"`
 - In python 3: `print("Hello, World!")`
@@ -48,14 +49,10 @@ for language in ["python 2", "python 3", "julia", "java", "ruby", "perl"]:
 
 ### Exercise
 
-**Find the syntax for adding two numbers together in some programming language**
-(not python)
+**Find the syntax for exponentiation in python**
 
-Some ideas:
-- Go
-- C++
-- javascript
-- FORTRAN
+In this course, we will not always provide the answer ahead of time.
+Many solutions are just a Google (or Bing) search away.
 
 ## Variables store information
 
@@ -77,6 +74,7 @@ Now we can access the value in the variable:
 ```python
 x
 ```
+
 ```python
 print("The value of x is", x)
 ```
@@ -116,7 +114,10 @@ counter
 
 ```py
 counter = 1
+
+# This line says: perform the following action 10 times
 for i in range(10):
+    # This line says, add 1 to the value of counter
     counter = counter + 1
 ```
 
@@ -127,9 +128,32 @@ for i in range(10):
 3. `10`
 4. `11`
 
+Let's see the result:
+
 ```python
 counter
 ```
+
+Pay attention to the difference between the following:
+
+```py
+# This is identical to the previous version we saw
+counter = 1
+for i in range(10):
+    counter = counter + 1
+
+# What's different here?
+counter_2 = 1
+for i in range(10):
+    counter_2 + 1
+```
+
+**What is the value of `counter_2`?**
+
+1. `1`
+2. `2`
+3. `10`
+4. `11`
 
 ## "Functions" perform actions on data
 
@@ -143,6 +167,18 @@ for i in range(10):
 ```
 
 ### Functions may also "return" results
+
+
+```python
+sum([1,2,3,4])
+```
+```python
+```python
+print("Hi, I'm Z!")
+```
+
+When we assign variables with functions
+we assign the "return" value of the function
 
 ```python
 y = sum([1,2,3,4])
@@ -178,12 +214,10 @@ weird_addition(3, 10)
 
 ### Complete the function
 
-Complete the following function
-to divide the first argment by the square of the second argument
-and return the result.
+Complete the following function to divide the first argment by the square of
+the second argument and return the result.
 
 When this code block is evaluated, it should print "42.0".
-
 
 ```python
 def square_divide(): # What should the arguments for this function be?
@@ -246,8 +280,8 @@ my_string.split()
 Internal methods may also take arguments
 
 ```python
-my_other_string = "Please, dont pull me apart, I cant take it"
-my_other_string.split(",")
+my_other_string = "Please! Dont pull me apart! I cant take it!"
+my_other_string.split("!")
 ```
 
 ## Hands on
