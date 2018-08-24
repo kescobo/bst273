@@ -284,6 +284,10 @@ my_other_string = "Please! Dont pull me apart! I cant take it!"
 my_other_string.split("!")
 ```
 
-## Hands on
+## Hands on practice
 
-Download {{Assignment}} and go through the hand-on exercises
+Execute the cells in order.
+Try to fix errors or correct the code to get the right output.
+
+Googling is permitted, encouraged even!
+Collaboration is also ok, but make sure you understand what's happening.
