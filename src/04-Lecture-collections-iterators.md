@@ -19,4 +19,96 @@ After completing this lesson, you should be able to:
 
 ## Review of scalars
 
-Integers and floats
+Integers and floats represent numbers.
+
+```python
+integer  = 2 + 2
+```
+```python
+flt = 26.7 * 0.15
+```
+
+### Strings are sequences of characters
+
+```python
+st = 'How' + ' ' + 'now' + ' ' + 'brown' + ' ' + 'cow' + '?'
+```
+
+## Collections are groups of related objects
+
+- The contents of collections can be scalars of different types, or even other collections
+- The best type of collection depends on the application
+    - Does the content have an order?
+    - How do you plan to access the content?
+- "Data Structures" represent an entire CS course... there are many other collection types than what we'll discuss here
+
+
+### Lists (vectors) are ordered collections
+
+```python
+my_list = [1, 'z', 2.4, 42, 1]
+my_list
+```
+
+Iterating through a list returns the elements of the list in order
+
+```python
+for element in my_list:
+    print(element)
+```
+
+#### List "indexing"
+
+We can also access items at particular locations in the list.
+
+WARNING: in python, counting starts at `0`, not `1`.
+In other words, to get the **third** element in `my_list`:
+
+```python
+my_list
+```
+```python
+my_list[2]
+```
+
+Like a variable, we can perform operations on the items in a list.
+
+```python
+my_list[2] * 4
+```
+
+#### Figuring out how many elements are in a list
+
+The `len()` function ("length") tells us how many items are in a list.
+
+```python
+len(my_list)
+```
+
+You may be tempted to use len to get the last item in the list...
+
+```python
+list_length = len(my_list)
+my_list[list_length]
+```
+
+This error is telling us that the `index` (in this case `5`) is "out of range."
+In other words, the index `5` is "off the end" of the list.
+This is because python counts from 0...
+a list with `len(list) == 5` has indices `[0,1,2,3,4]`.
+
+#### Getting the last element in a list
+
+```python
+my_list[-5]
+```
+
+
+#### Modiying lists
+
+Lists are "mutable", meaning we can change them.
+
+
+#### Figuring out how many elements are in a list
+
+The `len()` function ("length") can be quite
