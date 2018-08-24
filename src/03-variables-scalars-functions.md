@@ -286,8 +286,207 @@ my_other_string.split("!")
 
 ## Hands on practice
 
-Execute the cells in order.
-Try to fix errors or correct the code to get the right output.
+- Execute the cells in order (`shift+enter` evaluates a cell)
+- Cells preceded by a **bold** question may require some editing to the the correct output
+    - **_expected output will be in bold italics_**
+- Try to fix errors or correct the code to get the right output.
 
 Googling is permitted, encouraged even!
 Collaboration is also ok, but make sure you understand what's happening.
+
+### Working with logic / booleans
+
+Boolean values are binary values `True` or `False`.
+These values are returned when we ask questions about equality
+or compare values to see if one is less than or greater than the other
+
+In python, the syntax for this is `==` for "is equal?",
+`!=` for "is not equal?",
+`>` and `<` for "is greater than?" and "is less than?", and
+`>=` and `<=` for "is greater/less than or equal to?"
+
+For example (see if you can predict the outcome before you evaluate the cell):
+
+```python
+1 == 1.0
+```
+```python
+1 == 2
+```
+```python
+1 != 2
+```
+```python
+100 > 10
+```
+```python
+100 < 10 * 10
+```
+```python
+100 <= 10 * 10
+```
+
+We can also do [boolean logic](https://en.wikipedia.org/wiki/Boolean_algebra#Operations)
+
+```python
+True and False
+```
+```python
+x = 1
+y = 10
+
+y < x or x * 10 == y
+```
+```python
+True and not False
+```
+
+
+**In each of the following, change only one boolean value to get**
+**the cell to return _`True`_**
+
+```python
+False or False # eg, make one of these True
+```
+
+```python
+False and True
+```
+
+```python
+# pay attention to order of operations
+False and True or False
+```
+
+```python
+False or True and False
+```
+
+```python
+False or (True and False)
+```
+
+**In each of the following, change only one of the following:**
+
+    - `==` (is equal?) to `!=` (is not equal?) or vice versa
+    - `and` to `or` or vice versa
+    - insert or remove a `not`
+
+**to get the cell to evaluate to `True`**
+
+NOTE: In most cases there are multiple correct answers.
+Try out different methods.
+
+```python
+e = 2.72
+pi = 3.14
+lue = 42 # Life, the Universe and Everything
+
+e < pi and pi > lue
+```
+
+```python
+e == pi or e == lue
+```
+
+```python
+False and e == pi or e == lue
+```
+
+```python
+(False and False or False) and True
+```
+
+```python
+"What makes strings less than?" < "I bet I know..."
+```
+
+## String practice
+
+Strings are sequences of characters. You can concatenate (merge) strings by
+adding them together.
+
+```py
+"One String. " + "Two String. " + "Red String. " + "Blue String."
+```
+
+Some arithmetic operations also work:
+
+```py
+"Why? Because. " * 10
+```
+
+Notice that the spaces have to be included when concatenating:
+
+```py
+a = "No"
+b = "bueno"
+a + b
+```
+
+When printing, spaces are added between arguments
+
+```py
+print(a, b)
+```
+
+The following strings will be used in some of the following exercises.
+Evaluate the cell, but do not change it.
+
+```python
+s1 = "The short"
+s2 = "brown fox"
+s3 = "jumped over"
+s4 = "the lazy dog"
+s5 = "ban"
+s6 = "ana"
+s7 = "na"
+```
+
+**Get the output of each of the following cells to match the text in _italics_**
+**above it. Try adding the least amount of text possible.**
+
+_**"The short brown fox jumped over the lazy dog"**_
+
+```python
+print(s1, s4)
+```
+
+**Same thing, but you can't add commas**
+
+```python
+print(s1 + s2, s3, s4)
+```
+
+_**bananananananana**_
+
+```python
+print(s5 + s6 + s7) # you can do this with only 2 characters
+```
+
+Recall that the `.split()` function acts on a string to divide it at spaces
+(if no arguments are passed), or at a character if a character is passed as
+an argument.
+
+```python
+a = "Whoa... what happened?".split()
+a
+```
+
+The `.join()` function does the inverse.
+It's a method of a string (the separator) and takes a list as an argument
+(we'll learn more about lists on Thursday, it's what's returned by `.split()`)
+
+```python
+" ".join(a)
+```
+
+**Get the following to return _The-short-brown-fox-jumped-over-the-lazy-dog_**
+
+```python
+my_string = s1 + ' ' + s2 + ' ' + s3 + ' ' + s4
+
+my_split = my_string.split()
+
+join(my_split)
+```
