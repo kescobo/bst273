@@ -121,7 +121,11 @@ for i in range(10):
     counter = counter + 1
 ```
 
-**What is the value of `counter`?**
+### Poll: Week 1, lecture 3
+
+#### Question 1
+
+**What is the value of the `counter` variable?**
 
 1. `1`
 2. `2`
@@ -148,7 +152,11 @@ for i in range(10):
     counter_2 + 1
 ```
 
-**What is the value of `counter_2`?**
+### Poll: Week 1, lecture 3
+
+#### Question 2
+
+**What is the value of the `counter_2` variable?**
 
 1. `1`
 2. `2`
@@ -172,7 +180,6 @@ for i in range(10):
 ```python
 sum([1,2,3,4])
 ```
-```python
 ```python
 print("Hi, I'm Z!")
 ```
