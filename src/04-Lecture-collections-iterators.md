@@ -130,7 +130,7 @@ my_list.insert(4, 'another new entry')
 my_list
 ```
 
-## A quick aside
+### A quick aside
 
 Don't forget to google!
 
@@ -149,14 +149,32 @@ my_list2 = ['a', 20, 2.3, 4.9, 'b', 7]
 # into the answer box in the quiz
 ```
 
-## Dictionaries are unordered collections with arbitrary "keys"
+### "Slices" are ranges of indices
+
+Select multiple values using `:`
+
+```python
+l3 = [10, 20, 30, 40, 50]
+l3[2:4]
+```
+
+Select from one value to the end:
+
+```python
+l3[3:]
+```
+
+## Dictionaries are unordered collections with arbitrary indices
+
+The indices are called "keys",
+and the objects referenced by keys are the "values".
 
 ```python
 my_dict = {"Ada": 0, "Bodhidharma": 1, "César": 2}
 my_dict
 ```
 
-Entries in a dict are accessed by their keys
+Entries (values) in a dict are accessed by their keys
 
 ```python
 my_dict["Ada"]
@@ -164,9 +182,250 @@ my_dict["Ada"]
 
 ### Iterating through a dictionary provides keys
 
-NOTE: The order of the keys is unrelated to the way the dictionary was constructed
-
 ```python
 for k in my_dict:
     print(k)
+```
+
+Or you can iterate through values using keys:
+
+```python
+for k in my_dict:
+    print(my_dict[k])
+```
+
+### You can get lists of keys and values using the `.keys()` and `.values()` methods
+
+```python
+my_dict.keys()
+```
+
+```python
+my_dict.values()
+```
+
+### A quick note on formatting
+
+- One can often take advantage of python's syntax to make code more readable
+- For example, spaces after commas, opening brackets etc are ignored
+
+```python
+my_dict_formatted = {
+    "Ada": 0,
+    "Bodhidharma": 1,
+    "César": 2
+    }
+
+my_dict == my_dict_formatted
+```
+
+or
+
+```python
+my_dict_formatted = {
+    "Ada"         : 0,
+    "Bodhidharma" : 1,
+    "César"       : 2
+    }
+
+my_dict == my_dict_formatted
+```
+
+### The order of keys and values does not matter
+
+```python
+dict2 = {
+    "Bodhidharma" : 1,
+    "César"       : 2,
+    "Ada"         : 0,
+    }
+dict2 == my_dict
+```
+
+### Dictionary entries can be added, modified, or deleted
+
+```python
+my_dict["Kevin"] = 3
+my_dict
+```
+
+```python
+my_dict["Bodhidharma"] = 0 # Will this change the value of `my_dict["Ada"]`?
+my_dict
+```
+
+```python
+my_dict.pop("Kevin")
+my_dict
+```
+
+## Sets are unordered collections with uniue entries
+
+```python
+my_set = {1,2,1,2,1,2}
+my_set
+```
+```python
+my_set == {2, 1}
+```
+
+### Sets cannot be indexed
+
+```python
+my_set[1]
+```
+
+But you *can* iterate through them:
+
+```python
+for entry in my_set:
+    print(entry)
+```
+
+### Pay attention to the (lack of) ordering
+
+```python
+for entry in {3,2,1,"2"}:
+    print(type(entry))
+    print(entry)
+```
+
+### Sets have some useful functions for comparison
+
+```python
+s1 = {'a','b','c','d'}
+s2 = {'b','c','d','e'}
+
+s1.intersection(s2) # or s1 & s2
+```
+```python
+s1.difference(s2) # or s1 - s2
+```
+```python
+s1.union(s2) # or s1 | s2
+```
+
+NOTE: Set theory is [a whole thing][1] - useful but beyond the scope of this course.
+
+[1]: https://en.wikipedia.org/wiki/Set_theory
+
+### Excercise: other useful set functions
+
+**What values of `my_other_set` will return `True` for the following functions:**
+
+```python
+my_first_set = {'Ada', 'Bodhidharma', 'César'}
+my_other_set_1 = { } # put at least one string in this set to make the following return True
+
+my_first_set.issuperset(my_other_set_1)
+```
+
+```python
+my_first_set = {'Ada', 'Bodhidharma', 'César'}
+my_other_set_2 = { } # put at least one string in this set to make the following return True
+
+my_first_set.issubset(my_other_set_2)
+```
+
+### Set operations can be used to compare other collections
+
+```python
+one_more_list = ['a', 'b', 'c', 'd', 'a', 'b']
+yet_another_list = ['c', 'd', 'b']
+
+set(one_more_list).union( set(yet_another_list) )
+```
+
+### Excercise: using set operations
+
+**What will the return value of the following expression be?**
+
+```python
+a_dict = {"Emma"    : "TA",
+          "Eric"    : "instructor",
+          "Kevin"   : "instructor",
+          "Marina"  : "TA",
+          "Shirley" : "TA"}
+
+roles = {"instructor", "TA", "student"}
+
+roles.difference( set( a_dict.keys() ) )
+```
+
+## Strings are weird
+
+Remember how I said strings can act like scalars or collections of characters?
+
+```python
+set("banana")
+```
+```python
+for c in "What's happening?":
+    print(c)
+```
+
+
+## Comprehensions
+
+"Comprehensions" are ways to generate collections (lists, dicts, sets) etc
+with less typing. The syntax is similar to a `for` loop:
+
+```python
+for i in range(5):
+    print(i)
+```
+```python
+[i for i in range(5)]
+```
+```python
+[i ** 2 for i in range(5)]
+```
+
+### Sets and dictionaries can also be made with comprehensions
+
+```python
+{i % 3 for i in range(20)} # what does the % operator do? use google!
+```
+
+```python
+letters = "abcdefghijklmnopqrstuvwxyz"
+
+{l: n for l, n in zip(letters, range(26))}
+```
+
+### How does zip work?
+
+[RTFM = Read the manual][2]
+[RTFD = Read the docs][2]
+
+[2]: https://docs.python.org/3/library/functions.html#zip
+
+```python
+for i1, i2 in zip([1,2,3,4,5], 'abcde'):
+    print(i1)
+    print(" ", i2)
+```
+
+## X of Ys - nested collections
+
+- So far, all of our collections have held scalars
+- But collections can hold other collections too
+- For example, you can have a list of lists, or a dict of sets
+    - Generally speaking - it's not a good idea to have the `key`s of dicts be collections
+
+```python
+teaching_staff = {
+    "Eric"  : {
+        "position" : "instructor",
+        "e-mail"   : "eric.franzosa@hsph.harvard.edu",
+        "lectures" : [1,2,5,6,8,11,13,14,15]
+        },
+    "Kevin" : {
+        "position" : "instructor",
+        "e-mail"   : "kbonham@broadinstitute.org",
+        "lectures" : [3,4,7]
+        }
+    }
+
+teaching_staff["Eric"]["e-mail"]
 ```
