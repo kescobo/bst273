@@ -92,7 +92,7 @@ The `len()` function ("length") tells us how many items are in a list.
 len(my_list)
 ```
 
-You may be tempted to use len to get the last item in the list...
+You may be tempted to use `len()` to get the last item in the list...
 
 ```python
 list_length = len(my_list)
@@ -396,6 +396,7 @@ letters = "abcdefghijklmnopqrstuvwxyz"
 ### How does zip work?
 
 [RTFM = Read the manual][2]
+
 [RTFD = Read the docs][2]
 
 [2]: https://docs.python.org/3/library/functions.html#zip
