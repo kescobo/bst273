@@ -32,7 +32,10 @@ flt = 26.7 * 0.15
 
 ```python
 st = 'How' + ' ' + 'now' + ' ' + 'brown' + ' ' + 'cow' + '?'
+st
 ```
+
+Actually strings can be thought of as a collection of characters...
 
 ## Collections are groups of related objects
 
@@ -50,6 +53,15 @@ st = 'How' + ' ' + 'now' + ' ' + 'brown' + ' ' + 'cow' + '?'
 - they are mutable (you can add, remove, or modify entries)
 - they are indexable (you can access individual entries with a unique "index")
 
+### Indexing a string
+
+```python
+st[4]
+```
+```python
+st[4:13]
+```
+
 ## Lists (vectors) are ordered collections
 
 ```python
@@ -57,7 +69,47 @@ my_list = [1, 'z', 2.4, 42, 1]
 my_list
 ```
 
-Iterating through a list returns the elements of the list in order
+### Lists can have one or more elements
+
+```python
+my_list = [] # this is an "empty" list
+```
+
+Add new elements to the end of a list with `.append()`
+
+```python
+my_list.append(10)
+my_list
+```
+
+```python
+my_list.append(20)
+my_list
+```
+
+or with `.extend()`
+
+```python
+my_list.extend([30, 40, 50]) # equivalent to `my_list + [30, 40, 50]`
+my_list
+```
+
+### "Order" for a list means insertion order
+
+```python
+my_list.append(3)
+my_list
+```
+
+If you want the list sorted, use `.sort()`
+
+```python
+my_list.sort()
+my_list
+```
+
+
+### Iterating through a list returns the elements of the list in order
 
 ```python
 for element in my_list:
@@ -68,7 +120,7 @@ for element in my_list:
 
 We can also access items at particular locations in the list.
 
-WARNING: in python, counting starts at `0`, not `1`.
+**WARNING**: in python, counting starts at `0`, not `1`.
 In other words, to get the **third** element in `my_list`:
 
 ```python
@@ -110,6 +162,31 @@ a list with `len(list) == 5` has indices `[0,1,2,3,4]`.
 my_list[-1]
 ```
 
+or the second to last:
+
+```python
+my_list[-2] # etc
+```
+
+### To access a range of values, use a "slice"
+
+```python
+my_list[1:3]
+```
+
+- You can think about a slice as `my_list[start:stop]`
+    - **BUT**, note that the thing at `stop` is not included in the slice
+    - another way to thing about it is `my_list[start : start + slice_length]`
+
+### Slice from the beginning or to the end
+
+```python
+my_list[:3]
+```
+
+```python
+my_list[2:]
+```
 
 ### Modiying lists
 
@@ -119,14 +196,8 @@ Lists are "mutable", meaning we can change them.
 my_list[1] = 10
 my_list
 ```
-
 ```python
-my_list.append('a new entry')
-my_list
-```
-
-```python
-my_list.insert(4, 'another new entry')
+my_list[1:3] = [1, 2, 3]
 my_list
 ```
 
@@ -134,7 +205,7 @@ my_list
 
 Don't forget to google!
 
-"How do I add something to a list in python?"
+Eg. "How do I add something to a list in python?"
 
 **Question 1**
 
@@ -147,21 +218,6 @@ my_list2 = ['a', 20, 2.3, 4.9, 'b', 7]
 ```py
 # use this cell to figure out the code, then copy and paste it
 # into the answer box in the quiz
-```
-
-### "Slices" are ranges of indices
-
-Select multiple values using `:`
-
-```python
-l3 = [10, 20, 30, 40, 50]
-l3[2:4]
-```
-
-Select from one value to the end:
-
-```python
-l3[3:]
 ```
 
 ## Dictionaries are unordered collections with arbitrary indices
@@ -179,6 +235,29 @@ Entries (values) in a dict are accessed by their keys
 ```python
 my_dict["Ada"]
 ```
+
+### Dictionaries can be empty
+
+```python
+my_other_dict = {} # equivalent to `my_other_dict = dict()``
+my_other_dict
+```
+
+And new elements can be added similar to assignment
+
+```python
+my_other_dict["key1"] = "value1"
+my_other_dict["key2"] = "value2"
+my_other_dict
+```
+
+Note that if you use the same key, you will override previous entries:
+
+```python
+my_other_dict["key1"] = "other value"
+my_other_dict
+```
+
 
 ### Iterating through a dictionary provides keys
 
@@ -231,7 +310,7 @@ my_dict_formatted = {
 my_dict == my_dict_formatted
 ```
 
-### The order of keys and values does not matter
+### The order of key/value pairs does not matter
 
 ```python
 dict2 = {
@@ -240,23 +319,6 @@ dict2 = {
     "Ada"         : 0,
     }
 dict2 == my_dict
-```
-
-### Dictionary entries can be added, modified, or deleted
-
-```python
-my_dict["Kevin"] = 3
-my_dict
-```
-
-```python
-my_dict["Bodhidharma"] = 0 # Will this change the value of `my_dict["Ada"]`?
-my_dict
-```
-
-```python
-my_dict.pop("Kevin")
-my_dict
 ```
 
 ## Sets are unordered collections with uniue entries
@@ -308,6 +370,23 @@ s1.union(s2) # or s1 | s2
 NOTE: Set theory is [a whole thing][1] - useful but beyond the scope of this course.
 
 [1]: https://en.wikipedia.org/wiki/Set_theory
+
+### As with other collections, sets can be empty...
+
+```python
+my_set = {}
+my_set
+```
+
+```python
+my_set.add('a')
+my_set
+```
+```python
+my_set.add('b')
+my_set
+```
+
 
 ### Excercise: other useful set functions
 
@@ -365,48 +444,6 @@ for c in "What's happening?":
 ```
 
 
-## Comprehensions
-
-"Comprehensions" are ways to generate collections (lists, dicts, sets) etc
-with less typing. The syntax is similar to a `for` loop:
-
-```python
-for i in range(5):
-    print(i)
-```
-```python
-[i for i in range(5)]
-```
-```python
-[i ** 2 for i in range(5)]
-```
-
-### Sets and dictionaries can also be made with comprehensions
-
-```python
-{i % 3 for i in range(20)} # what does the % operator do? use google!
-```
-
-```python
-letters = "abcdefghijklmnopqrstuvwxyz"
-
-{l: n for l, n in zip(letters, range(26))}
-```
-
-### How does zip work?
-
-[RTFM = Read the manual][2]
-
-[RTFD = Read the docs][2]
-
-[2]: https://docs.python.org/3/library/functions.html#zip
-
-```python
-for i1, i2 in zip([1,2,3,4,5], 'abcde'):
-    print(i1)
-    print(" ", i2)
-```
-
 ## X of Ys - nested collections
 
 - So far, all of our collections have held scalars
@@ -424,9 +461,11 @@ teaching_staff = {
     "Kevin" : {
         "position" : "instructor",
         "e-mail"   : "kbonham@broadinstitute.org",
-        "lectures" : [3,4,7]
+        "lectures" : [3,4,7,9,10,12]
         }
     }
 
 teaching_staff["Eric"]["e-mail"]
 ```
+
+## Review
