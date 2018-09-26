@@ -37,6 +37,8 @@ st
 
 Actually strings can be thought of as a collection of characters...
 
+
+
 ## Collections are groups of related objects
 
 - The contents of collections can be scalars of different types, or even other collections
@@ -108,6 +110,19 @@ my_list.sort()
 my_list
 ```
 
+### Iterating through a list returns the elements of the list in order
+
+But first - a quick review of loops
+
+```python
+import time
+
+for i in range( 10 ):
+    i2 = i ** 2
+    print( "i =", i )
+    print( "i2=", i2 )
+    time.sleep( 2 )
+```
 
 ### Iterating through a list returns the elements of the list in order
 
@@ -468,4 +483,62 @@ teaching_staff = {
 teaching_staff["Eric"]["e-mail"]
 ```
 
-## Review
+## Hands-on practice
+
+**Write a loop that displays the square of every number from 0 to 10**
+
+_NOTE: the last number displayed should be `100`_
+
+```python
+for ?? in ??: # replace the ??
+    print()
+```
+
+The colors of the rainbow are often described as ROYGBIV
+(red, orange, yellow, green, blue, indigo, violet)
+corresponding to wavelengths between 650nm (red) and 400nm (violet).
+
+**Make a dictionary where the names of the colors are the keys**
+**and the wavelengths are the values**
+
+Just make the wavelengths evenly spaced (how might you use math to let
+python do this for you automatically?)
+
+```python
+color_dict = {
+    "red" : 650,
+    # enter other keys and valus here
+    }
+```
+
+"Comprehensions" are syntax that let you generate collections using loops.
+For example, compare the output of
+
+```python
+for i in range(5):
+    print(i / 2)
+```
+
+to
+
+```python
+[i / 2 for i in range(5)]
+```
+
+**Use a list comprehension to make a list of all of the square of every number**
+**from 0 to 10**
+
+_the output should be `[0, 1, 4, 9, 16, 25, 36, 49, 64, 81, 100]`
+
+```python
+squares = [i for ?? in ??]
+squares
+```
+
+Comprehensions can also be used to make sets and dictionaries.
+For example, here's a dictionary comprehension:
+
+```python
+squares = {i : i ** 2 for i in range(5)}
+squares
+```
